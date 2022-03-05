@@ -13,7 +13,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 
-const porta = 3000;
+const porta = process.env.PORT || 3000;
 const routers = require('./router');
 const path = require('path');
 const helmet = require('helmet');
