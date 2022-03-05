@@ -1,0 +1,62 @@
+<%- include('includes/head') %>
+    <%- include('includes/navbar') %>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-12 my-3">
+                    <h1 class="text-center">Login / Cadastro</h1>
+                    <p class="text-center lead">Faça seu login ou se cadastre.</p>
+
+                    <%- include('includes/messages') %>
+
+                    <div class="row justify-content-center">
+                        <div class="col-5">
+                            <h4>Faça seu cadastro</h4>
+                            <form class="form-cadastro" action="/login/register" method="POST">
+                                
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                                <div>
+                                    <label for="emailcadastro" class="form-label">Seu e-mail</label>
+                                    <input type="email" name="email" class="form-control" id="emailcadastro" aria-describedby="emailHelp">
+                                </div>
+
+                                <div>
+                                    <label for="senhacadastro" class="form-label">Senha</label>
+                                    <input type="password" name="password" class="form-control" id="senhacadastro">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary my-3">Criar minha conta</button>
+                            </form>
+                        </div>
+
+                        <div class="col-5">
+                            <h4>Entrar no sistema</h4>
+
+                            <form class="form-login" action="/login/login" method="POST">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <div>
+                                    <label for="emaillogin" class="form-label">Seu e-mail</label>
+                                    <input type="email" name="email" class="form-control" id="emaillogin"
+                                        aria-describedby="emailHelp">
+                                </div>
+
+                                <div>
+                                    <label for="senhalogin" class="form-label">Senha</label>
+                                    <input type="password" name="password" class="form-control" id="senhalogin">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary my-3">Login</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </di>
+
+            </div>
+        </div>
+
+<%- include('includes/footer') %>
